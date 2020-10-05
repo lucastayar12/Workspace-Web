@@ -1,0 +1,26 @@
+.login{
+    height: 120px;
+    width: 200px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+}   
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input-field{
+    width: 200;
+    height: 200;
+}
+
+input[type=button] {
+    margin: 10px;
+}
+
+.hidden{
+    display: none;
+}
