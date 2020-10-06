@@ -1,16 +1,10 @@
-var frase;
+const express = require('express');
+const app = express();
 
-carregaFrase = (callback) => {
-  setTimeout( () => {
-    frase = "Minha frase obstrutiva";
-    callback();
-  }, 3000);
-};
+app.get("/", (req, res) => {
+  res.sendFile(__dirname + "/index.html");
+});
 
-imprimeFrase = () => {
-  console.log(frase);
-};
-
-carregaFrase(imprimeFrase);
-
-console.log("Olá");
+app.listen(3000, () => {
+  console.log("Servidor ligado");
+});
