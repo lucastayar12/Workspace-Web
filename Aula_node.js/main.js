@@ -17,7 +17,6 @@ app.get("/confirmacao", (req, res) => {
   res.sendFile(__dirname + "/views/confirmacao.html");
 });
 
-
 app.listen(3000, () => {
   console.log("Servidor ligado");
 });
