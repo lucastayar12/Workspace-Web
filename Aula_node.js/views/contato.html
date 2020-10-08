@@ -3,17 +3,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body bgcolor="white">
-    <form action="/confirmacao" method="GET">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome1">
 
-        <label for="tel">Telefone:</label>
-        <input type="text" name="tel" id="tel1">
+    <div>
+        <nav class="container">
+            <button><a href="/">Home</a></button>
+            <button><a href="#">Contato</a></button>
+            <button> <a href="/sobre">Sobre</a></button>
+        </nav>
+    </div>
+
+    <br>
+    <br>
+
+    <form class="container" action="/confirmacao" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" id="nome1" value="" placeholder="Nome">
+
+        <label for="mail">Email:</label>
+        <input type="text" name="mail" id="tel1" value="" placeholder="Email">
         
-        <label for="assunto">Assunto:</label>
-        <input type="text" name="assunto">
+        <label for="mensg">Mensagem:</label>
+        <input type="text" name="mensg" value="" placeholder="Mensagem">
 
         <button type="submit">Enviar</button>
     </form>
