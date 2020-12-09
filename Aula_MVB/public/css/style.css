@@ -1,0 +1,13 @@
+.hidden{
+    display: none;
+}
+
+textarea.content:disabled{
+    background-color: transparent;
+}
+
+textarea.content{
+    border: none;
+    resize: none;
+    width: 100%;
+}
