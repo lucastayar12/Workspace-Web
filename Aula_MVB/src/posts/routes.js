@@ -9,4 +9,7 @@ module.exports = (app) => {
 
     //ROTA PRA UPDATE DE UM POST POR ID
     app.put('/posts', controller.update)
+
+    //Um post por ID
+    app.delete('/posts', controller.remove)
 }

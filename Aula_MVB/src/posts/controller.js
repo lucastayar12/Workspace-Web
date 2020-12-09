@@ -44,3 +44,13 @@ exports.update = (req, res) => {
             res.send({ "message": "ok" });
         })
 }
+
+exports.remove = (req,res) => {
+    Post.destroy({
+        where : {
+            id : req.body.id
+        }
+    }).then((affectedRows) => {
+        res.send({'message' : 'ok' , 'affectedRows' : affectedRows});
+    })
+}

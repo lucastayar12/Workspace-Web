@@ -34,20 +34,26 @@ Posts = {
 
         var btnEdit = $("<button></button>").attr("class", "edit").html("Editar");
         var btnSave = $("<button></button>").attr("class", "save hidden").html("Salvar");
+        var btnRemove = $("<button></button>").attr("class", "remove").html("Remover");
 
         $(btnEdit).on("click", (event) => {
             Posts.enableEdit(event.target);
-        })
+        });
 
         $(btnSave).on("click", (event) => {
             Posts.update(event.target);
-        })
+        });
+
+        $(btnRemove).on("click", (event) => {
+            Posts.remove(event.target);
+        });
 
         $(user).append(date);
         $(comment).append(content);
         $(comment).append(user);
         $(comment).append(btnEdit);
         $(comment).append(btnSave);
+        $(comment).append(btnRemove);
         $(comment).append("<br><br>");
 
         $("#coments").append(comment);
@@ -104,6 +110,28 @@ Posts = {
 
             }
         })
+
+    },
+
+    remove : (button) => {
+        
+        var comment = $(button).parent();
+        var id = $(comment).attr("id").replace("comment-", "");
+
+        $.ajax({
+            type: "DELETE",
+            url: "/posts",
+            data: {"id": id },
+            success: (data) => {
+                $(comment).remove();
+
+            },
+            error: () => {
+
+            }
+        })
+
+
 
     }
 }
